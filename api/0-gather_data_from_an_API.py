@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import requests 
+import requests  # type: ignore
 import sys
 
 if __name__ == "__main__":
