@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+"""The api is used to call the employee id and returns certain values"""
 
 import requests
 import sys
 
-if __name__ == "__main__":
+
+def getapi():
+    """makes the call for each employee id"""
     if len(sys.argv) != 2 or not sys.argv[1].isdigit():
         print("Usage: python script.py <employee_id>")
         sys.exit(1)
@@ -42,8 +45,13 @@ if __name__ == "__main__":
 
     # Display progress
     print(
-        f"Employee {employee_name} is done with tasks ({completed_tasks}/{total_tasks}):"
+        f"Employee {employee_name} is done with tasks\
+        ({completed_tasks}/{total_tasks}):"
     )
     for task in todo_data:
         if task["completed"]:
             print(f"\t{task['title']}")
+
+
+if __name__ == "__main__":
+    getapi()
